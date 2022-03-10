@@ -1,0 +1,204 @@
+{% extends "base.html" %} {% block title %} Movies {% endblock %} {% block
+content %}
+<div class="container-fluid">
+    <div class="container bg-graphite-transparent-74 py-3">
+        <div class="card bg-graphite-transparent-42 p-2">
+          <div class="row py-3">
+            <div class="col-lg-8 col-12">
+              <form class="d-flex">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-warning type="submit">Search</button>
+              </form>
+            </div>
+            <div class="col-lg-2 col-md-6 col-12">
+              <div class="dropdown">
+                <a
+                  class="btn btn-graphite dropdown-toggle"
+                  href="#"
+                  role="button"
+                  id="dropdownSort"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Sort By
+                </a>
+      
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-12">
+              <div class="dropdown">
+                <a
+                  class="btn btn-graphite dropdown-toggle"
+                  href="#"
+                  role="button"
+                  id="dropdownFilter"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Filter By
+                </a>
+      
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-12 py-3">
+                <a href="../movie-page" class="text-decoration-none">
+                    <div class="card border-0 rounded">
+                    <img
+                        src="https://m.media-amazon.com/images/M/MV5BYTExZTdhY2ItNGQ1YS00NjJlLWIxMjYtZTI1MzNlMzY0OTk4XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg"
+                        class="card-img-top"
+                        alt="..."
+                    />
+                    <div class="card-body bg-graphite rounded-bottom text-white">
+                        <div class="row">
+                        <div class="col-9">
+                            <h5 class="card-title">The Batman</h5>
+                        </div>
+                        <div class="col-3">
+                            <h5 class="">
+                            <strong> 10.0 </strong>
+                            </h5>
+                        </div>
+                        </div>
+                        <!-- <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                    </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 py-3">
+                <div class="card border-0 rounded">
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BMjc4MTgyZjktM2EzZS00MmNmLWEzYWMtMDBlMDU1MDQyY2Q3XkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-graphite rounded-bottom text-white">
+                    <div class="row">
+                    <div class="col-9">
+                        <h5 class="card-title">Death on the Nile</h5>
+                    </div>
+                    <div class="col-3">
+                        <h5 class="">
+                        <strong> 6.5 </strong>
+                        </h5>
+                    </div>
+                    </div>
+                    <!-- <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 py-3">
+                <div class="card border-0 rounded">
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BNDhhYjU4ZDMtYjI5OC00N2RkLTg5MGItZTNkM2Q5MzE5NjQxXkEyXkFqcGdeQXVyODk2NDQ3MTA@._V1_FMjpg_UX1000_.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-graphite rounded-bottom text-white">
+                    <div class="row">
+                    <div class="col-9">
+                        <h5 class="card-title">Cyrano</h5>
+                    </div>
+                    <div class="col-3">
+                        <h5 class="">
+                        <strong> 9.6 </strong>
+                        </h5>
+                    </div>
+                    </div>
+                    <!-- <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 py-3">
+                <div class="card border-0 rounded">
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BNjRmNDI5MjMtMmFhZi00YzcwLWI4ZGItMGI2MjI0N2Q3YmIwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-graphite rounded-bottom text-white">
+                    <div class="row">
+                    <div class="col-9">
+                        <h5 class="card-title">Black Widow</h5>
+                    </div>
+                    <div class="col-3">
+                        <h5 class="">
+                        <strong> 8.9 </strong>
+                        </h5>
+                    </div>
+                    </div>
+                    <!-- <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 py-3">
+                <div class="card border-0 rounded">
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BOTY2NzFjODctOWUzMC00MGZhLTlhNjMtM2Y2ODBiNGY1ZWRiXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-graphite rounded-bottom text-white">
+                    <div class="row">
+                    <div class="col-9">
+                        <h5 class="card-title">Free Guy</h5>
+                    </div>
+                    <div class="col-3">
+                        <h5 class="">
+                        <strong> 8.2 </strong>
+                        </h5>
+                    </div>
+                    </div>
+                    <!-- <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 py-3">
+                <div class="card border-0 rounded">
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-graphite rounded-bottom text-white">
+                    <div class="row">
+                    <div class="col-9">
+                        <h5 class="card-title">The Dark Knight</h5>
+                    </div>
+                    <div class="col-3">
+                        <h5 class="">
+                        <strong> 10.0 </strong>
+                        </h5>
+                    </div>
+                    </div>
+                    <!-- <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+{% endblock %}
