@@ -14,6 +14,10 @@ def submission():
 def signup():
     return render_template("signup.html");
 
+@app.route("/login")
+def moviePage():
+    return render_template("login.html");
+
 @app.route("/movies")
 def movies():
     return render_template("movies.html");
