@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% block title %} Submission {% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-danger">Movie Submission Page</h1>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6 p-3 mb-2 bg-danger text-white">
+                <label for="inputEmail4">Movie Title</label>
+<!--                <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>-->
+
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Example: Angry Birds 2">
+            </div>
+            <div class="form-group p-3 mb-2 bg-danger text-white">
+                <label for="genre">Genre</label>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchAction">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Action</label>
+                </div>
+                <div class="form-check form-switch ">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchDrama">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Drama</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchHorror">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Horror</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchComedy>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Comedy</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchThriller">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Thriller</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchSciFi">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Sci-Fi</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchRomance">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Romance</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCrime">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Crime</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchWestern">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Western</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchAdventure">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Adventure</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchMusical">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Musical</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchDocumentary">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Documentary</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchFantasy">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Fantasy</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchAnimated">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Animated</label>
+                </div>
+            </div>
+            <div class="form-group p-3 mb-2 bg-danger text-white">
+                <label for="exampleFormControlSelect1">Rating</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>G</option>
+                    <option>PG</option>
+                    <option>PG-13</option>
+                    <option>R</option>
+                    <option>Unrated</option>
+                </select>
+            </div>
+            <div class="mb-3 p-3 mb-2 bg-danger text-white">
+              <label for="exampleFormControlTextarea1" class="form-label">Movie Description</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="form-group col-md-6 p-3 mb-2 bg-danger text-white">
+                <label for="inputPassword4">Production Company</label>
+                <input type="" class="form-control" id="inputPassword4" placeholder="Example: Universal Studios">
+            </div>
+            <div class="form-group col-md-6 p-3 mb-2 bg-danger text-white">
+                <label for="inputPassword4">Director</label>
+                <input type="" class="form-control" id="inputPassword4" placeholder="Example: Steven Spielberg">
+            </div>
+            <div class="form-group col-md-6 p-3 mb-2 bg-danger text-white">
+                <label for="inputPassword4">Trailer Link</label>
+                <input type="" class="form-control" id="inputPassword4" placeholder="Include http:// or https://">
+            </div>
+        </div>
+        <div class = "form-group p-3 mb-2 bg-danger text-white">
+            <label for="releaseDate">Release Date</label>
+            <input type = "date" class="form-control" id="releaseDate">
+        </div>
+
+        <div class="form-group p-3 mb-2 bg-danger text-white">
+            <label for="inputDuration">Duration</label> <br>
+            <label for="inputHrs">Hours</label>
+            <input type="text" class="form-control" id="inputHr" placeholder="Example:2">
+            <label for="inputMin">Minutes</label>
+            <input type="text" class="form-control" id="inputMin" placeholder="Example:55">
+        </div>
+
+            <div class="form-group col-md-6 p-3 mb-2 bg-danger text-white">
+                <label for="inputPassword4">Image Link</label>
+                <input type="" class="form-control" id="inputPassword4" placeholder="Include http:// or https://">
+            </div>
+
+
+        <div class="form-group p-3 mb-2 bg-danger text-white">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group p-3 mb-2 bg-danger text-white">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row p-3 mb-2 bg-danger text-white">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4 p-3 mb-2 bg-danger text-white">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    	<option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2 p-3 mb-2 bg-danger text-white">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="form-group p-3 mb-2 bg-danger text-white">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %} 
