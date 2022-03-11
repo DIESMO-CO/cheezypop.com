@@ -1,69 +1,49 @@
-{% extends "base.html" %} {% block title %} Log In {% endblock %} {% block
-    content %}
-    <div class="container bg-graphite-transparent-74 text-white p-4">
-      <div class="row py-5">
-        <div class="col-lg-3 col-md-4 col-sm-12 py-2">
-          <img
-            src="https://m.media-amazon.com/images/M/MV5BYTExZTdhY2ItNGQ1YS00NjJlLWIxMjYtZTI1MzNlMzY0OTk4XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg"
-            alt=""
-            class="w-100 rounded"
-          />
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+<section class="vh-100 bg-image"
+         style="background-image: url('https://i.pinimg.com/originals/3c/f6/56/3cf656908a2481110485bac3bf1297d9.jpg');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">CheezyPop</h2>
+
+                            <form>
+
+
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg"/>
+                                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="form3Example4cg"
+                                           class="form-control form-control-lg"/>
+                                    <label class="form-label" for="form3Example4cg">Password</label>
+                                </div>
+
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="button"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                                        Sign In
+                                    </button>
+                                </div>
+
+                                <a href="#!" class="fw-bold text-body"><u>Forgot Password?</u></a>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-9 col-md-8 col-sm-12 py-2 text-center">
-          <iframe
-            height="450"
-            src="https://www.youtube.com/embed/mqqft2x_Aa4"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            class="w-100"
-          ></iframe>
-        </div>
-      </div>
-      <div class="row">
-        <div class="row">
-          <div class="col-10">
-            <h1 class="">
-              <strong> The Batman </strong>
-            </h1>
-          </div>
-          <div class="col-2">
-            <h1 class="">
-              <strong> 9.8 </strong>
-            </h1>
-          </div>
-        </div>
-        <h5 class="fw-light text-muted">2022 / PG-13 / 2h 55m</h5>
-        <h5 class="fw-light text-muted">[Action][Crime][Drama]</h5>
-        <h5 class="fw-light pt-2 pb-4">
-          When the Riddler, a sadistic serial killer, begins murdering key political
-          figures in Gotham, Batman is forced to investigate the city's hidden
-          corruption and question his family's involvement.
-        </h5>
-        <h5 class="fw-light text-muted">
-          <strong class="fw-bold">Director </strong>Matt Reeves
-        </h5>
-        <h5 class="fw-light text-muted">
-          <strong class="fw-bold">Writers </strong>Matt Reeves / Peter Craig / Bob
-          Kane
-        </h5>
-        <h5 class="fw-light text-muted">
-          <strong class="fw-bold">Stars </strong>Robert Pattinson / Zoe Kravitz /
-          Paul Dano
-        </h5>
-      </div>
-      <div class="row">
-        <h3 class="text-white fw-bold">Reviews</h3>
-        <div class="card bg-graphite p-3">
-          <h3 class="text-white fw-light"><strong class="fw-bold">@dwightdiesmo</strong> | 9.8 CheezyPops</h3>
-          <h6 class="text-secondary pb-2">February 28, 2022</h6>
-          <h5 class="text-white">
-            When the Riddler, a sadistic serial killer, begins murdering key
-            political figures in Gotham, Batman is forced to investigate the city's
-            hidden corruption and question his family's involvement.
-          </h5>
-        </div>
-      </div>
     </div>
-    {% endblock %}
+</section>
+
+{% endblock %}

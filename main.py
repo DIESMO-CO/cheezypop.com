@@ -15,7 +15,7 @@ def signup():
     return render_template("signup.html");
 
 @app.route("/login")
-def moviePage():
+def login():
     return render_template("login.html");
 
 @app.route("/movies")
