@@ -1,204 +1,48 @@
 {% extends "base.html" %}
 {% block title %} Home {% endblock %}
 {% block content %}
-
-<body style="overflow-x: hidden;">
-<!-- MAIN START -->
-<!-- FIRST CONTAINER -->
-<div class="container">
-    <div class="display-6 text-light">In Theaters</div>
-    <div class="jumbotron bg-success" style="border-radius: 15px;">
-        <div class="row">
-            <div class="col-lg-4 col-12">
-                <img class="img-thumbnail"
-                     src="https://sportshub.cbsistatic.com/i/2022/01/26/c77b5cd2-e1db-4e45-9049-8eaa1b9a7cd0/the-batman.jpg?auto=webp&width=1200&height=1778&crop=0.675:1,smart"
-                     alt="">
-                <div class="display-6">The Batman</div>
-            </div>
-            <div class="col-lg-8 col-12">
-                <br>
-                <div class="col-lg-9 col-md-8 col-sm-12 py-2 text-center">
-                    <iframe
-                            height="450"
-                            src="https://www.youtube.com/embed/mqqft2x_Aa4"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                            class="w-100"
-                    ></iframe>
-                    <div class="display-6 pull-right">9.8</div>
+<!--<h1 class="">New Arrivals</h1>-->
+<div id="newMoviesCarousel" class="carousel slide mb-5" data-bs-interval="false" data-bs-ride="carousel"
+     data-pause="hover">
+    <div class="carousel-inner">
+        {% for i in range(0,3) %}
+        {% if i == 0 %}
+        <div class="carousel-item active">
+            {% else %}
+            <div class="carousel-item">
+                {% endif %}
+                <iframe
+                        height="550"
+                        src="{{ newMovies[i][6] }}"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        class="w-100"
+                ></iframe>
+                <div class="bg-graphite text-center text-white py-4 px-5">
+                    <a href="{{url_for('moviePage', movie=newMovies[0][0])}}" class="btn btn-warning px-5"><h1
+                            class="fw-bold">{{ newMovies[i][0]}}</h1></a>
                 </div>
             </div>
+            {% endfor %}
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </div>
-<br>
-<div class="text-lg-center display-6">Trending</div>
-<br>
-<div class="container" >
-    <div class="jumbotron bg-info" style="border-radius: 15px;">
-        <div class="container-fluid">
-            <div class="container bg-graphite-transparent-74 py-3">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-12 py-3">
-                        <a href="../movie-page" class="text-decoration-none">
-                            <div class="card border-0 rounded">
-                                <img
-                                        src="https://m.media-amazon.com/images/M/MV5BYTExZTdhY2ItNGQ1YS00NjJlLWIxMjYtZTI1MzNlMzY0OTk4XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg"
-                                        class="card-img-top"
-                                        alt="..."
-                                />
-                                <div class="card-body bg-graphite rounded-bottom text-white">
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <h5 class="card-title">The Batman</h5>
-                                        </div>
-                                        <div class="col-3">
-                                            <h5 class="">
-                                                <strong> 10.0 </strong>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <!-- <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12 py-3">
-                        <div class="card border-0 rounded">
-                            <img
-                                    src="https://m.media-amazon.com/images/M/MV5BMjc4MTgyZjktM2EzZS00MmNmLWEzYWMtMDBlMDU1MDQyY2Q3XkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_.jpg"
-                                    class="card-img-top"
-                                    alt="..."
-                            />
-                            <div class="card-body bg-graphite rounded-bottom text-white">
-                                <div class="row">
-                                    <div class="col-9">
-                                        <h5 class="card-title">Death on the Nile</h5>
-                                    </div>
-                                    <div class="col-3">
-                                        <h5 class="">
-                                            <strong> 6.5 </strong>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <!-- <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12 py-3">
-                        <div class="card border-0 rounded">
-                            <img
-                                    src="https://m.media-amazon.com/images/M/MV5BNDhhYjU4ZDMtYjI5OC00N2RkLTg5MGItZTNkM2Q5MzE5NjQxXkEyXkFqcGdeQXVyODk2NDQ3MTA@._V1_FMjpg_UX1000_.jpg"
-                                    class="card-img-top"
-                                    alt="..."
-                            />
-                            <div class="card-body bg-graphite rounded-bottom text-white">
-                                <div class="row">
-                                    <div class="col-9">
-                                        <h5 class="card-title">Cyrano</h5>
-                                    </div>
-                                    <div class="col-3">
-                                        <h5 class="">
-                                            <strong> 9.6 </strong>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <!-- <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12 py-3">
-                        <div class="card border-0 rounded">
-                            <img
-                                    src="https://m.media-amazon.com/images/M/MV5BNjRmNDI5MjMtMmFhZi00YzcwLWI4ZGItMGI2MjI0N2Q3YmIwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-                                    class="card-img-top"
-                                    alt="..."
-                            />
-                            <div class="card-body bg-graphite rounded-bottom text-white">
-                                <div class="row">
-                                    <div class="col-9">
-                                        <h5 class="card-title">Black Widow</h5>
-                                    </div>
-                                    <div class="col-3">
-                                        <h5 class="">
-                                            <strong> 8.9 </strong>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <!-- <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12 py-3">
-                        <div class="card border-0 rounded">
-                            <img
-                                    src="https://m.media-amazon.com/images/M/MV5BOTY2NzFjODctOWUzMC00MGZhLTlhNjMtM2Y2ODBiNGY1ZWRiXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg"
-                                    class="card-img-top"
-                                    alt="..."
-                            />
-                            <div class="card-body bg-graphite rounded-bottom text-white">
-                                <div class="row">
-                                    <div class="col-9">
-                                        <h5 class="card-title">Free Guy</h5>
-                                    </div>
-                                    <div class="col-3">
-                                        <h5 class="">
-                                            <strong> 8.2 </strong>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <!-- <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12 py-3">
-                        <div class="card border-0 rounded">
-                            <img
-                                    src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg"
-                                    class="card-img-top"
-                                    alt="..."
-                            />
-                            <div class="card-body bg-graphite rounded-bottom text-white">
-                                <div class="row">
-                                    <div class="col-9">
-                                        <h5 class="card-title">The Dark Knight</h5>
-                                    </div>
-                                    <div class="col-3">
-                                        <h5 class="">
-                                            <strong> 10.0 </strong>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <!-- <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container text-white">
+    <h1 class="">Featured Movies</h1>
+    {% for movie in featuredMovies %}
+        <h6 class="">{{movie}}</h6>
+    {% endfor %}
 </div>
-
-<!-- FOOTER -->
-<footer>
-    <hr class="my-4">
-    <div class="row">
-        <div class="col-lg text-center">
-            <p>
-                Copyright &copy; 2021-
-                <script type="text/javascript">document.write(new Date().getFullYear());</script>
-                , CheezyPop – All Rights Reserved
-            </p>
-        </div>
-    </div>
-</footer>
-
-{% endblock %}
+    {% endblock %}
