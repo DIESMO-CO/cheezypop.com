@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request, flash, url_for, redirect
+from flask import Flask, render_template, request, flash, url_for, redirect, session
 import mysql.connector
 
 selectMovies = 'SELECT * FROM movies'
 selectReviews = 'SELECT * FROM reviews'
 app = Flask(__name__);
+app.secret_key = "super secret key"
 
 @app.route("/")
 def home():
@@ -18,6 +19,8 @@ def home():
     cursor.execute(selectMovies)
     movieList = cursor.fetchall()
     print(movieList)
+    print(session)
+    user = [session['loggedin'], session['username'], session['email']]
     featuredMovies = []
     for movie in topRatedMovies:
         for movieInList in movieList:
@@ -25,10 +28,11 @@ def home():
             if movie[0] == movieInList[0]:
                 print(movieInList)
                 featuredMovies += movieInList
-    return render_template("index.html", newMovies=newMovies, featuredMovies=featuredMovies);
+    return render_template("index.html", newMovies=newMovies, featuredMovies=featuredMovies, user=user);
 
 @app.route("/submission/", methods=["POST", "GET"])
 def submission():
+    user = [session['loggedin'], session['username'], session['email']]
     if request.method == "POST":
         connection = mysql.connector.connect(host="localhost", port="3306", user="root", database="cheezypop")
         cursor = connection.cursor()
@@ -66,15 +70,56 @@ def submission():
         connection.close()
         return redirect(url_for("home"))
     else:
-        return render_template("submission.html");
+        return render_template("submission.html", user=user);
 
-@app.route("/signup/")
+@app.route("/signup",  methods=["GET", "POST"])
 def signup():
+    connection = mysql.connector.connect(host="localhost", port="3306", user="root", database="cheezypop")
+    cursor = connection.cursor()
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        insertSyntax = (
+            "INSERT INTO `users` (`idusername`, `email`, `password`)"
+            " VALUES (%s, %s, %s);"
+        )
+        insertData = (username, email, password)
+        cursor.execute(insertSyntax, insertData)
+        print(cursor.statement)
+        cursor.execute('COMMIT;')
+        cursor.close()
+
     return render_template("signup.html");
 
-@app.route("/login/")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html");
+    connection = mysql.connector.connect(host="localhost", port="3306", user="root", database="cheezypop")
+    cursor = connection.cursor()
+    user = [session['loggedin'], session['username'], session['email']]
+    if request.method=='POST':
+        email = request.form['email']
+        password = request.form['password']
+        cursor.execute('SELECT * FROM users WHERE email=%s AND password=%s', (email, password))
+        record = cursor.fetchone()
+        #print(record)
+        if record:
+            session['loggedin']= True
+            session['email']= record[1]
+            session['username']= record[0]
+            return redirect(url_for('home'))
+        else:
+            print("false")
+            return redirect(url_for('signup'))
+    return render_template("login.html", user=user);
+
+@app.route("/logout/")
+def logout():
+    session['username']=''
+    session['email']=''
+    session['loggedin'] = False
+    return redirect(url_for("home"))
+
 
 @app.route("/movies/")
 def movies():
@@ -82,7 +127,8 @@ def movies():
     cursor = connection.cursor()
     cursor.execute(selectMovies)
     movieRecords = cursor.fetchall()
-    return render_template("movies.html", movieRecords=movieRecords);
+    user = [session['loggedin'], session['username'], session['email']]
+    return render_template("movies.html", movieRecords=movieRecords, user=user);
 
 @app.route("/<movie>/")
 def moviePage(movie):
@@ -90,9 +136,10 @@ def moviePage(movie):
     cursor = connection.cursor()
     cursor.execute(selectMovies)
     movieList = cursor.fetchall()
+    user = [session['loggedin'], session['username'], session['email']]
     for movies in movieList:
         if movies[0] == movie:
-            return render_template("movie-page.html", movie=movies);
+            return render_template("movie-page.html", movie=movies, user=user);
 
 if __name__ == "__main__":
-    app.run(debug=True);
+    app.run(debug=True)

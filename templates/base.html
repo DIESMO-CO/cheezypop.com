@@ -19,8 +19,13 @@
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="/movies">Movies</a>
               <a class="nav-item nav-link" href="/submission">Submit</a>
-              <a class="nav-item nav-link" href="/login">Login</a>
-              <a class="nav-item nav-link" href="/signup">Sign Up</a>
+                {% if user[0]==True %}
+                    <a class="nav-item nav-link" href="/login">{{user[1]}}</a>
+                    <a class="nav-item nav-link" href="/logout">Log Out</a>
+                {% else %}
+                    <a class="nav-item nav-link" href="/login">Login</a>
+                    <a class="nav-item nav-link" href="/signup">Sign Up</a>
+                {% endif %}
             </div>
           </div>
         </nav>
